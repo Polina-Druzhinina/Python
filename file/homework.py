@@ -1,16 +1,11 @@
-with open("roles.txt", "r", encoding="utf-8") as file:
-    lst = [i.strip() for i in file if i.strip() and i.strip()!="roles:"]
-    
-isText = True
-roles = []
-textlines = []
+file =  open("roles.txt", "r", encoding="utf-8")
+lst = [i.strip() for i in file if i.strip() and i.strip()!="roles:"]
+file.close()
 
-for i in lst:
-    if i == "textLines:":
-        isText = False
-        continue
-    (roles if isText else textlines).append(i)
-    
+roles_index = lst.index("textLines:")
+roles = lst[:roles_index]
+textlines = lst[roles_index + 1:]
+
 combined_lines = []
 current_phrase = ""
 for line in textlines:
