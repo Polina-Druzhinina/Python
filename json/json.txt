@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "Name": "Polina",
+            "Login": "pola_name",
+            "Last time": "12:39",
+            "Length of stay": 40
+        },
+        {
+            "Name": "Sacha",
+            "Login": "sasha_name",
+            "Last time": "14:50",
+            "Length of stay": 60
+        },
+        {
+            "Name": "Oleg",
+            "Login": "oleg_name",
+            "Last time": "10:25",
+            "Length of stay": 10
+        },
+        {
+            "Name": "Sonya",
+            "Login": "sonya_name",
+            "Last time": "15:46",
+            "Length of stay": 30
+        },
+        {
+            "Name": "Vlad",
+            "Login": "vlad_name",
+            "Last time": "18:00",
+            "Length of stay": 57
+        },
+        {
+            "name": "gfb",
+            "Login": "bbgfgbf",
+            "Last Time": "14:25",
+            "Length of stay": 55
+        }
+    ]
+}
