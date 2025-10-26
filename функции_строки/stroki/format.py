@@ -1,0 +1,6 @@
+print("hello {a:17} {b} {a} {b}".format(a="student", b="Vasya"))
+print("hello {a:>6} {b} {a} {b}".format(a="student", b="Vasya"))
+print("hello {a:6} {b} {a} {b}".format(a="student", b="Vasya"))
+print("hello {a:^17} {b} {a} {b}".format(a="student", b="Vasya"))
+print("hello {a:+^17} {b} {a} {b}".format(a="student", b="Vasya"))
+print("hello {a:-^17} {b} {a} {b}".format(a="student", b="Vasya"))
