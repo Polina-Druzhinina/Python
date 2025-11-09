@@ -51,7 +51,7 @@ def clickButton():
     elif change_3 == 2:
          data_questionnaire[question3.cget("text")].append("Актерская игра")
     elif change_3 == 3:
-         data_questionnaire[question3.cget("text")].append("Визуальные эффукты и картинка")
+         data_questionnaire[question3.cget("text")].append("Визуальные эффекты и картинка")
     elif change_3 == 4:
          data_questionnaire[question3.cget("text")].append("Музыкальное сопровождение")
           
