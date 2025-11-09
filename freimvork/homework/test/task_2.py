@@ -127,7 +127,7 @@ check.pack()
 
 end_s = tk.Label(baseWindow,
                  text="",
-                 font="Arial 14")
+                 font="Arial 16")
 end_s.pack()
 
 show_question()
