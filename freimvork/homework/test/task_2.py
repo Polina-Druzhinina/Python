@@ -4,7 +4,7 @@ current_question = 0
 count_c = 0
 count_un = 0
 
-file = open("test.txt", "r", encoding="utf-8")
+file = open("testirovanie.txt", "r", encoding="utf-8")
 data = json.load(file)
 file.close()
 
