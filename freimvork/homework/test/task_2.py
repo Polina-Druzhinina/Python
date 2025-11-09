@@ -9,6 +9,7 @@ data = json.load(file)
 file.close()
 
 def show_question():
+    global current_question
     q = data["questions"][current_question]
     question.config(text=q["question"])
     for i,option in enumerate(q["answers"]):
@@ -17,11 +18,9 @@ def show_question():
     check.config(text="")
 
 def check_question():
-    global current_question
-    global count_c
-    global count_un
+    global current_question,count_c, count_un
     q = data["questions"]
-    correct = data["questions"][current_question]["correct"]
+    correct = q[current_question]["correct"]
     choice = answer.get()
 
     if choice == correct:
@@ -30,10 +29,10 @@ def check_question():
         count_c += 1
         correct_q.config(text=f"Правильно:{count_c}")
     else:
-        check.config(text="Не правильно!",
+        check.config(text="Неправильно!",
                     fg="red")
         count_un += 1
-        uncorrect_q.config(text=f"Правильно:{count_un}")
+        uncorrect_q.config(text=f"Неправильно:{count_un}")
 
     if current_question < len(q)-1:
         baseWindow.after(1000,next_question)
@@ -59,16 +58,16 @@ def end_test():
     )
 
     if 0<= count_c <= 3:
-        end_s.config(text="Оценка:2",
+        estimation.config(text="Оценка:2",
                      fg="red")
     elif 4<=count_c<=5:
-        end_s.config(text="Оценка:3",
+        estimation.config(text="Оценка:3",
                      fg="orange")
     elif 6<=count_c<=7:
-        end_s.config(text="Оценка:4",
+        estimation.config(text="Оценка:4",
                      fg="green")
     else:
-        end_s.config(text="Оценка:5",
+        estimation.config(text="Оценка:5",
                      fg="green")
         
     for rb in radio_buttoms:
@@ -103,7 +102,6 @@ question = tk.Label(baseWindow,
                     font="Arial 18")
 question.pack()
 
-
 answer = tk.IntVar()
 radio_buttoms =[]
 for i in range(4):
@@ -125,10 +123,10 @@ check = tk.Label(baseWindow,
                  text="")
 check.pack()
 
-end_s = tk.Label(baseWindow,
+estimation = tk.Label(baseWindow,
                  text="",
                  font="Arial 16")
-end_s.pack()
+estimation.pack()
 
 show_question()
 baseWindow.mainloop()
