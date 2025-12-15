@@ -4,7 +4,7 @@ class ChessPiece(ABC):
         self.horizontal = horizontal
         self.vertical  = vertical
     @abstractmethod
-    def can_move(self):
+    def can_move(self,other_h, other_v):
         pass
     @property
     def horizontal(self):
@@ -44,10 +44,10 @@ class Knight(ChessPiece):
         dx = abs(lst.index(other_h) - lst.index(self.horizontal))
         dy = abs(other_v - self.vertical)
         return (dx == 2 and dy==1) or (dx==1 and dy==2)
-k = King('b', 5)
-print(k.can_move('c', 5))
-print(k.can_move('d', 2))
+lst = [King('b', 5), Knight('c', 4)]
 
-kn = Knight('c', 4)
-print(kn.can_move('e', 5))
-print(kn.can_move('d', 4))
+for i in lst:
+    print(i.can_move('c', 5))
+    print(i.can_move('d', 2))
+    print(i.can_move('e', 5))
+    print(i.can_move('d', 4))
