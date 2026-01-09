@@ -1,4 +1,3 @@
-from functools import singledispatch
 class Negator:
     @staticmethod
     def neg(arg):
